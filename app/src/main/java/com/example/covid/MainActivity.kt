@@ -1,11 +1,20 @@
 package com.example.covid
 
 import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.FieldNamingPolicy
+import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.OkHttpClient
+import okhttp3.Request
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +29,29 @@ class MainActivity : AppCompatActivity() {
 
         centerImage.setOnClickListener {
             content.startRippleAnimation()
+
+            fetchData()
+
+        }
+    }
+
+    private fun fetchData() {
+        GlobalScope.launch {
+            val okHttpClient= OkHttpClient()
+            val request= Request.Builder().url("https://api.covid19india.org/data.json").build()
+            val response = withContext(Dispatchers.IO){okHttpClient.newCall(request).execute()}
+            if (response.isSuccessful) {
+                val gsonBuilder = GsonBuilder()
+                gsonBuilder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                val gson = gsonBuilder.create()
+                val data = gson.fromJson(response.body?.string(), TotalResponse::class.java)
+
+                launch(Dispatchers.Main) {
+                    val intent = Intent(this@MainActivity, MainActivity::class.java)
+                    intent.putExtra("DataAsJson", gson.toJson(data))
+                    startActivity(intent)
+                }
+            }
         }
     }
 
