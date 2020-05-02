@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
     <item
         android:id="@+id/left_menu"
-        android:icon="@drawable/left"
+        android:icon="@drawable/ic_spread"
         android:title="1st one" />
     <item
         android:id="@+id/middle_menu"
-        android:icon="@drawable/middle"
-        android:title="2nd one" />
+        android:icon="@drawable/ic_bacteria"
+        android:title="2nd one"
+
+        />
     <item
         android:id="@+id/right_menu"
-        android:icon="@drawable/right"
+        android:icon="@drawable/ic_hospital"
         android:title="3rd one" />
 </menu>
