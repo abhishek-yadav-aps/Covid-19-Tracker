@@ -49,7 +49,7 @@ class FirstActivity : AppCompatActivity() {
 
                 launch(Dispatchers.Main) {
 
-                     val intent = Intent(this@FirstActivity, FirstActivity::class.java)
+                     val intent = Intent(this@FirstActivity, MainActivity::class.java)
                      intent.putExtra("DataAsJson", gson.toJson(data))
                      startActivity(intent)
                 }
