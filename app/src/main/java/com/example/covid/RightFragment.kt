@@ -33,7 +33,7 @@ class RightFragment : Fragment() {
         }
         ambulanceTv.setOnClickListener {
             val callIntent = Intent(Intent.ACTION_VIEW)
-            callIntent.data = Uri.parse("tel:102")
+            callIntent.data = Uri.parse("tel:108")
             startActivity(callIntent)
         }
         policeTv.setOnClickListener {
