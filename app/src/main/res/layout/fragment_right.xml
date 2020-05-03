@@ -37,10 +37,8 @@
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_toLeftOf="@id/covidTv"
-        android:layout_below="@id/helplineTv"
         android:src="@drawable/ic_virus"
-        android:layout_marginTop="50dp"
+        android:layout_gravity="center_vertical"
         android:layout_marginRight="10dp"
         android:tint="@color/dark_red"
         />
@@ -53,10 +51,9 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         android:textColor="@color/dark_red"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_gravity="center_vertical"
         android:id="@+id/covidTv"
-        android:layout_below="@id/helplineTv"
+
         android:background="@null"
         style="?android:attr/borderlessButtonStyle"
         android:shadowColor="@android:color/white"
@@ -71,10 +68,8 @@
     <ImageView
     android:layout_width="40dp"
     android:layout_height="40dp"
-    android:layout_toLeftOf="@id/ambulanceTv"
-    android:layout_below="@id/covidTv"
+        android:layout_gravity="center_vertical"
     android:src="@drawable/ic_automobile"
-    android:layout_marginTop="50dp"
     android:layout_marginRight="10dp"
     android:tint="@color/dark_blue"/>
 
@@ -86,10 +81,9 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         android:textColor="@color/dark_blue"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_gravity="center_vertical"
         android:id="@+id/ambulanceTv"
-        android:layout_below="@id/covidTv"
+
         android:background="@null"
         style="?android:attr/borderlessButtonStyle"
         android:shadowColor="@android:color/white"
@@ -104,10 +98,9 @@
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_toLeftOf="@id/policeTv"
-        android:layout_below="@id/ambulanceTv"
+        android:layout_gravity="center_vertical"
         android:src="@drawable/ic_miscellaneous"
-        android:layout_marginTop="50dp"
+
         android:layout_marginRight="10dp"
         android:tint="@color/dark_green"/>
 
@@ -119,10 +112,8 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         android:textColor="@color/dark_green"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_gravity="center_vertical"
         android:id="@+id/policeTv"
-        android:layout_below="@id/ambulanceTv"
         android:background="@null"
         style="?android:attr/borderlessButtonStyle"
         android:shadowColor="@android:color/white"
@@ -139,7 +130,7 @@
         android:textStyle="bold"
         android:textColor="@color/dark_red"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="100dp"
+        android:layout_gravity="center_vertical"
         android:id="@+id/symptomsTv"
         android:layout_below="@id/policeTv"/>
 </LinearLayout>
